@@ -1,0 +1,82 @@
+<div class="conteneurConteneur row">
+    <div class="row col-md-7">
+        <div class=" col-md-6" (click)=" afficheProduit()" [ngClass]="{'activeEltv1': varietes}">
+            <div class="elt" [ngClass]="{'activeElt': produit}">
+
+                <div class="image">
+                    <img src="/assets/images/produits.png" alt="">
+                </div>
+                <div class="libelle">
+                    PRODUITS AGRICOLES
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-6" (click)="afficheVarietes()" [ngClass]="{'activeEltv1': varietes}">
+            <div class="elt" [ngClass]="{'activeElt': varietes}">
+
+                <div class="image">
+                    <img src="/assets/images/varietes.png" alt="">
+                </div>
+                <div class="libelle">
+                    VARITES
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-6" (click)="afficheSimulation()" [ngClass]="{'activeEltv1': varietes}">
+            <div class="elt"  [ngClass]="{'activeElt': simulations}">
+
+                <div class="image">
+                    <img src="/assets/images/simulations.png" alt="">
+                </div>
+                <div class="libelle">
+                    SIMULATIONS
+                </div>
+            </div>
+        </div>
+        <div class=" col-md-6" [ngClass]="{'activeEltv1': varietes}">
+            <div class="elt" (click)=" afficheAdmin()" [ngClass]="{'activeElt': admin}" >
+
+                <div class="image">
+                    <img src="/assets/images/admin1.png" alt="">
+                </div>
+                <div class="libelle">
+                    ADMINISTRATEURS
+                </div>
+            </div>
+        </div>
+    
+        <!-- <div class="elt">
+    
+            <div class="image">
+                
+            </div>
+            <div class="libelle">
+                ADMINISTRATEURS
+            </div>
+    
+        </div> -->
+
+    </div>
+    <div class="formulaire col-md-5">
+        <div class="mesappelles">
+            <!-- <div class="" style="width: 96%; margin-left: auto;margin-right: auto;"> -->
+                <!-- <app-ajouter-varietes></app-ajouter-varietes> -->
+                <!-- <app-ajouter-produit></app-ajouter-produit> -->
+                <!-- <app-ajouter-prevision></app-ajouter-prevision>
+                <app-ajouter-admin></app-ajouter-admin> -->
+            <!-- </div> -->
+
+            <div class="tttt" style="width: 96%; margin-left: auto;margin-right: auto;">
+
+                <app-ajouter-varietes *ngIf="varietes" class="varietes"></app-ajouter-varietes>
+                <app-ajouter-produit *ngIf="produit" class="produit"></app-ajouter-produit>
+                <app-ajouter-prevision *ngIf="simulations" class="simulations"></app-ajouter-prevision>
+                <app-ajouter-admin *ngIf="admin" class="admin"></app-ajouter-admin>
+            </div>
+
+            
+            <br>
+        </div>
+    </div>
+   
+</div>

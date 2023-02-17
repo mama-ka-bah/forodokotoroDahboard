@@ -1,0 +1,25 @@
+.espaceDispoDashboard{
+    // display: grid;
+    // grid-template-columns: 1fr 500px;
+    // height: 100vh;
+}
+.contenu{
+    // background-color: red;
+//     grid-column-start: 1;
+//   grid-column-end: 3;
+}
+.notification{
+    // background-color: blue;
+    // grid-column-start: 1;
+    // grid-column-end: 3;
+}
+
+.item{
+    font-size: 11px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:650px){
+   
+    
+}

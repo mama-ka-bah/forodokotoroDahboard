@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+    height: 100%;
+}
+html{
+    height: 100%;
+}
+
+.active{
+    background-color: white;
+    color:#14AE5C!important;
+}
+
+#sidebar ul li.active > a {
+    background: transparent;
+    color: #14AE5C;
+}

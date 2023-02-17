@@ -1,0 +1,132 @@
+// // // .ajout-champ-modal{
+// // //     margin-bottom: 20px;
+// // // }
+
+// // //debut style menus
+// // .barre-menu{
+// //     background-color: #14AE5C;
+// //     height: 80px;
+// //     display: flex;
+// //     justify-content: space-around;
+// //     align-items: center;
+// //     width: 100%;
+// // }
+// // .element-menus{
+// //     display: flex;
+// //     justify-content: space-around;
+// //     align-items: center;
+// //     width: 100%;
+// //     height: 100%;
+// // }
+// // .libelle{
+// //     color: bold;
+// //     color: #fff;
+// //     font-size: 18px;
+// //     font-weight: bold;
+// // }
+// // //fin style du menu
+
+
+// // //debut style du contenu
+// // .containeur{
+// //     display: flex;
+// //     // justify-content: space-around;
+// //     flex-direction: column;
+// //     // height: 100%;
+// //     align-items: center;
+// //     // margin: auto;
+// //     margin-top: 100px;
+// // }
+
+// // //Le logo de l'application
+// // .logo{
+// //     height: 140px;
+// //     width: 134px;
+// // }
+
+// // .texte{
+// //     text-align: justify;
+// //     width: 90%;
+// // }
+
+// // .input{
+// //     width: 90%;
+// //     display: flex;
+// //     justify-content: space-around;
+// //     flex-direction: column;
+// // }
+// // .input label{
+// //     font-weight: bold;
+// // }
+
+// //le button envoyer
+.envoyer-input{
+    background-color: #14AE5C;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    // padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    width: 80%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+label{
+    color: #000;
+}
+
+// .otpForm{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     // flex-basis: 50%;
+//     // height: 50vh;
+//     justify-content: space-around;
+//     gap: 20px;
+// }
+
+
+// .erreur{
+//     color: red;
+//     text-align: center;
+//     width: 100%;
+//     font-size: 12px;
+// }
+
+
+// .is-invalid{
+//     border-color: red;
+// }
+// .is-valid{
+//     border-color: #14AE5C;
+// }
+
+
+// .ajout-champ-modal{
+//     height: 100%;
+// }
+
+// //style du swal
+// .small-text {
+//     font-size: 12px;
+//   }
+
+// .obligatoire{
+//     color: red;
+// }
+
+.obligatoire{
+    color: red;
+}
+label{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+

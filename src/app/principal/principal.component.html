@@ -1,0 +1,98 @@
+
+		<div class="wrapper d-flex align-items-stretch" style="overflow: hidden !important;">
+			<nav id="sidebar" style="background-color: #14AE5C;">
+				<!-- <h1><a href="index.html" class="logo">MK</a></h1> -->
+        <div style="background-color: #efecee;">
+          <!-- <img class="logo" src="../assets/images/logo.png" style="height: 90px; width: 60px; display: initial;"> -->
+        </div>
+        <ul class="list-unstyled components mb-5">
+          <li routerLink="/forodokotoro/accueil" routerLinkActive="active">
+            <a  class="item"><span class="fa fa-home" style="font-size: 25px;"></span> Accueil</a>
+          </li>
+          <li routerLink="/forodokotoro/listProduits" routerLinkActive="active">
+              <a  class="item"><span class="fa-solid fa-wheat-awn" style="font-size: 25px;"></span> Agricultures</a>
+          </li>
+
+          <li routerLink="/forodokotoro/utilisateurs" routerLinkActive="active">
+            <a  class="item"><span class="fa-solid fa-users" style="font-size: 25px;"></span> Utilisateurs</a>
+          </li>
+
+          <li routerLink="/forodokotoro/parametrage" routerLinkActive="active">
+            <a  class="item"><span class="fa fa-cogs" style="font-size: 25px;"></span> Parametres</a>
+          </li>
+
+          <li>
+            <a  class="item" href="#" style="color: red; font-weight: bold;"><span class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></span> Deconnexion</a>
+          </li>
+        </ul>
+
+        <div class="footer">
+        	<p>
+            Tout droit reservé FORODOKOTORO
+					</p>
+        </div>
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav id="menuS" class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button  (click)="open()" class="buttonToggle"  type="button" id="sidebarCollapse" class="btn btn-primary" style="background-color: #14AE5C;">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fa fa-bars"></i>
+          </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto" 
+              style="display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 20px;"
+              >
+
+                <li class="nav-item active" routerLink="/forodokotoro/agriculteur-attente">
+                    <a class="nav-link">Agriculteurs en enttente</a>
+                </li>
+                <li class="nav-item" routerLink="/forodokotoro/transporteurs-attente">
+                    <a class="nav-link" >Transporteurs en enttente</a>
+                </li>
+               
+                <li class="nav-item">
+                 
+
+                  <button routerLink="/forodokotoro/notification" type="button" class="btn btn-primary position-relative" style="background-color: #14AE5C; border-color: #14AE5C;">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      99+
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                  </button>
+
+                </li>
+
+                <li class="nav-item">
+                  <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 50px;"
+                  alt="Avatar" />
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="monscroll">
+
+          <router-outlet></router-outlet>
+        </div>
+      
+        
+       
+      </div>
+		</div>
+
+

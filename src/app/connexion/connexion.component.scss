@@ -1,0 +1,145 @@
+.conteneur{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.50)), url(/assets/images/vvbg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    box-sizing: border-box;
+
+    // height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    // display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+
+
+
+//le logo de l'app
+.logo{
+    height: 160px;
+    width: 150px;
+}
+
+
+//le conteneur de l'application
+.conteneur-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height: 25vh;
+    // margin: 20px 0 20px 0;
+    // margin: 40px 0 40px 0;
+    height: 30%;
+}
+
+.input{
+    // width: 90vw;
+    width: 40%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.connexion{
+    font-size: 30px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.input label{
+    font-weight: bold;
+    font-size: 22px;
+    color: #fff;
+}
+
+//le conteneur de mon formullaire
+.formulaire{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    // height: 50vh;
+    gap: 20px;
+    // height: 100%;
+    // margin: 50px 0 50px 0;
+    height: 36%;
+    margin-top: 40px;
+}
+
+
+//le champ numero de telephone
+.telephone-input{
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    height: 50px!important;
+    
+}
+
+//le button envoyer
+.envoyer-input{
+    background: #14AE5C;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    height: 38px;
+    color: white;
+    font-size: 20px;
+}
+
+.inscription{
+    color: #14AE5C;
+    font-weight: bold;
+}
+
+.oui{
+    color: red;
+    font-weight: bold;
+}
+
+.inscription:hover, .oui:hover{
+    cursor: pointer;
+}
+
+
+.is-invalid{
+    border-color: red;
+}
+.is-valid{
+    border-color: #14AE5C;
+}
+
+.erreur{
+    color: red;
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
+}
+.oublie{
+    font-size: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+    color: red;
+}
+
+
+@media screen and (max-width:850px){
+    .oublie{
+        width: 60%;
+    }
+    .input{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:650px){
+    .oublie{
+        width: 80%;
+    }
+    .input{
+        width: 80%;
+    }
+}

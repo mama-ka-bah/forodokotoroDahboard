@@ -1,0 +1,68 @@
+<div class="conteneur">
+
+<div style="height: 100%;">
+
+    <div class="conteneur-logo">
+        <img class="logo" src="../assets/images/logo.png">
+    </div>
+
+    <div class="connexion">
+        CONNEXION
+    </div>
+
+    <form div class="formulaire"
+    [formGroup]="form" (ngSubmit)="onSubmit()"
+    >
+      <div class="input">
+        <label style="padding-left: 5px;">Numéro de télephone</label>
+        <input class="telephone-input" type="tel" class="form-control" placeholder="82644606" formControlName="username"
+        style="
+        height:40px;
+        background: #FFFFFF;
+        border: 2px solid #14AE5C;
+        border-radius: 15px;
+        padding-left: 15px;
+        "
+        [ngClass]="{'is-invalid': form.get('username')!.invalid && form.get('username')!.touched}"
+        [ngClass]="{'is-valid': form.get('username')!.valid && form.get('username')!.touched}"
+        >
+      </div>
+
+      <div class="input">
+        <label style="padding-left: 5px;">Mot de passe</label>
+        <input class="telephone-input" type="password" class="form-control"  id="password" data-toggle="password" placeholder="Mot de passe" formControlName="password"
+        style="
+        height:40px;
+        background: #FFFFFF;
+        border: 2px solid #14AE5C;
+        border-radius: 15px;
+        padding-left: 15px;
+        "
+        [ngClass]="{'is-invalid': form.get('password')!.invalid && form.get('password')!.touched}"
+        [ngClass]="{'is-valid': form.get('password')!.valid && form.get('password')!.touched}"
+        >
+      </div>
+
+      <div class="oublie">
+        Mot de passe oublié ?
+      </div>
+
+      <!-- <div *ngIf="form.valid && envoyer && isLoginFailed" class="alert alert-danger" role="alert"> -->
+        <!-- Login failed: {{ errorMessage }} -->
+        <span class="erreur" *ngIf="form.valid && envoyer && isLoginFailed">Numero ou Mot de passe incorrect</span>
+      <!-- </div> -->
+
+      <div class="input envoie">
+        <!-- routerLink="/tabs/tab1" -->
+        <button class="envoyer-input" type="submit" expand="block" [disabled]="form.invalid">SE CONNECTER</button>
+      </div>
+
+      <div class="autres-options">
+        
+      </div>
+      
+    </form>
+
+</div>
+
+</div>
