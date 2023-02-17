@@ -20,7 +20,10 @@ export class ParametrageComponent implements OnInit{
     this.admin =false;
     this.simulations = false;
     this.varietes = false;
+    //this.el.nativeElement.querySelector('.tttt').scrollIntoView();
+    //window.scrollTo(0,0);
   }
+
 
   afficheProduit(){
     this.produit = true;

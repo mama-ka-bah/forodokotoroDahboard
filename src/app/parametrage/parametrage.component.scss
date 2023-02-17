@@ -47,4 +47,28 @@
 
 .libelle{
     font-size: 18px;
+    text-align: center;
+}
+
+.image img{
+    width: 100px;
+}
+
+@media screen and (max-width:300px){
+   
+    .conteneurConteneur{
+        margin: 0;
+    }
+
+    .image img{
+        width: 60px;
+    }
+    .elt{
+        height: 160px;
+    }
+    .libelle{
+        font-size: 13px;
+        text-transform: lowercase;
+    }
+    
 }

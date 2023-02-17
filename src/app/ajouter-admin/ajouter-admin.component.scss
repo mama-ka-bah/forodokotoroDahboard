@@ -29,3 +29,9 @@ label{
     font-weight: bold;
 }
 
+@media screen and (max-width:300px){
+    .libelle{
+        font-size: 1em!important;
+    }
+}
+

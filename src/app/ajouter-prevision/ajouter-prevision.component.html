@@ -14,46 +14,37 @@
     <div class="ajout-champ-modal">
       <div class="containeur">
           <form class="otpForm">
-            <!-- titre -->
             <div class="input">
-              <label>Nom <span class="obligatoire" >*</span></label>
-              <input class="telephone-input" type="text" class="form-control" placeholder="Arachide" formControlName="titre"
-              >
-            </div>
-            <!-- Sous titre -->
-            <!-- <div class="input">
-              <label>Sous titre <span class="obligatoire">*</span></label>
-              <input class="telephone-input" type="text" class="form-control" placeholder="Sous titre" formControlName="soustitre">
-            </div> -->
+                <label>Libelle <span class="obligatoire">*</span></label>     
+                <select  class="form-control telephone-input" >
+                <option style="color: #000;" value="Choisir un type" selected disabled>Choisir un produit</option>
+                <option value="test">test</option>
+                </select>
+              </div>
 
-
-            <!-- Ressource -->
-            <!-- <div class="input">
-  
-              <label>Ressource</label>
-              <input class="telephone-input" type="text" class="form-control" placeholder="https://www.youtube.com/watch?v=nFALLbd-n7s" formControlName="lien">
-
-            </div> -->
-
-
-             <!-- photo du champ -->
-             <div class="input">
-  
-              <label>Photo</label>
-              <input type="file" id="avatar"  class="form-control" name="avatar"  accept="video/*"
-              multiple  formControlName="file" >
-
-
+            <!-- Delai jour -->
+            <div class="input">
+              <label>Delai <span class="obligatoire">*</span></label>
+              <input class="telephone-input" type="number" class="form-control" placeholder="Nombre de jours" >
             </div>
 
-  
-  
-            <!-- description du pub -->
+            <!-- Delai jour -->
             <div class="input">
-  
-              <label>Description <span class="obligatoire">*</span></label>
-              <textarea style="height: 200px;" class="telephone-input" type="text" class="form-control" formControlName="description">Description</textarea>
-            </div >
+                <label>Nombre de pluies <span class="obligatoire">*</span></label>
+                <input class="telephone-input" type="number" class="form-control" placeholder="Nombre de jours" >
+              </div>
+
+              <div class="input">
+                <label>Varietés <span class="obligatoire">*</span></label>     
+                <select  class="form-control telephone-input" >
+                <option style="color: #000;" value="Choisir un type" selected disabled>Choisir une varieté</option>
+                  <option value="test">test</option>
+                  <option value="test">test</option>
+                </select>
+              </div>
+
+
+        
   
             <div class="input">
               <button class="envoyer-input" type="submit" expand="block" >Ajouter</button>

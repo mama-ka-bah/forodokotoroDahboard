@@ -1,6 +1,6 @@
-<div class="conteneurConteneur row">
+<div class="conteneurConteneur row" style="display:flex; justify-content: center;">
     <div class="row col-md-7">
-        <div class=" col-md-6" (click)=" afficheProduit()" [ngClass]="{'activeEltv1': varietes}">
+        <div class=" col-md-6" style="margin-bottom: 10px;" (click)=" afficheProduit()" [ngClass]="{'activeEltv1': varietes}">
             <div class="elt" [ngClass]="{'activeElt': produit}">
 
                 <div class="image">
@@ -11,7 +11,8 @@
                 </div>
             </div>
         </div>
-        <div class=" col-md-6" (click)="afficheVarietes()" [ngClass]="{'activeEltv1': varietes}">
+        <div style="margin-bottom: 10px;" class=" col-md-6" (click)="afficheVarietes()" [ngClass]="{'activeEltv1': varietes}">
+
             <div class="elt" [ngClass]="{'activeElt': varietes}">
 
                 <div class="image">
@@ -22,7 +23,7 @@
                 </div>
             </div>
         </div>
-        <div class=" col-md-6" (click)="afficheSimulation()" [ngClass]="{'activeEltv1': varietes}">
+        <div  style="margin-bottom: 10px;" class=" col-md-6" (click)="afficheSimulation()" [ngClass]="{'activeEltv1': varietes}">
             <div class="elt"  [ngClass]="{'activeElt': simulations}">
 
                 <div class="image">
@@ -33,7 +34,7 @@
                 </div>
             </div>
         </div>
-        <div class=" col-md-6" [ngClass]="{'activeEltv1': varietes}">
+        <div style="margin-bottom: 10px;" class=" col-md-6" [ngClass]="{'activeEltv1': varietes}">
             <div class="elt" (click)=" afficheAdmin()" [ngClass]="{'activeElt': admin}" >
 
                 <div class="image">
@@ -57,7 +58,7 @@
         </div> -->
 
     </div>
-    <div class="formulaire col-md-5">
+    <div class="formulaire col-md-5" style="margin-top: 10px;">
         <div class="mesappelles">
             <!-- <div class="" style="width: 96%; margin-left: auto;margin-right: auto;"> -->
                 <!-- <app-ajouter-varietes></app-ajouter-varietes> -->
