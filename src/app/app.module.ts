@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,16 @@ import { ProduitsAgricoleComponent } from './produits-agricole/produits-agricole
 import { UtilisateursComponent } from './utilisateurs/utilisateurs.component';
 import { AgriculteursEnattenteComponent } from './agriculteurs-enattente/agriculteurs-enattente.component';
 import { TransporteursEnattenteComponent } from './transporteurs-enattente/transporteurs-enattente.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
+
+
+
+
 
 
 
@@ -50,8 +60,13 @@ import { TransporteursEnattenteComponent } from './transporteurs-enattente/trans
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxSpinnerModule
-  ],
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    NgMultiSelectDropDownModule.forRoot()
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

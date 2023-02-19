@@ -120,3 +120,102 @@
   }
  
   
+  .ContFiltreChamp{
+    width: 100%;
+     margin-bottom: 30px;
+  }
+  .filtreChamp{
+    width: 30%;
+    // display: flex;
+    // justify-content: flex-end;
+    // align-items: flex-end;
+    // margin-bottom: 20px;
+    float: right;
+    border: 5px solid #14AE5C;
+  }
+
+////les styles des activites
+
+
+table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  // gap: 10px;
+}
+thead{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
+  height: 50px;
+  font-weight: bold;
+}
+
+thead tr{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+
+tbody{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  background-color: #efecee;
+}
+
+tbody tr{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 95%;
+  height: 50px;
+  gap: 10px;
+  margin: 10px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 0px 5px 4px rgba(20, 174, 92, 0.06);
+  border-radius: 10px;
+}
+
+td {
+  vertical-align: middle;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 5px;
+}
+
+th {
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 5px;
+}
+
+.recolte{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.recolte .libelle{
+  color: #14AE5C;
+  font-weight: bold;
+}
+
+
+
+

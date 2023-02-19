@@ -13,35 +13,80 @@
 
     <div class="ajout-champ-modal">
       <div class="containeur">
-          <form class="otpForm">
+          <form class="otpForm"  [formGroup]="myForm" (ngSubmit)="submitForm()">
             <div class="input">
                 <label>Libelle <span class="obligatoire">*</span></label>     
-                <select  class="form-control telephone-input" >
+                <select  class="form-control telephone-input" formControlName="libelle"
+                [ngClass]="{'is-valid': myForm.get('libelle')!.valid && myForm.get('libelle')!.touched}"
+                [ngClass]="{'is-invalid': myForm.get('libelle')!.invalid && myForm.get('libelle')!.touched}"
+                >
                 <option style="color: #000;" value="Choisir un type" selected disabled>Choisir un produit</option>
-                <option value="test">test</option>
+                <option value="Floraison">Floraison</option>
+                <option value="Germination">Germination</option>
                 </select>
+
+                <span class="erreur" *ngIf="myForm!.get('libelle')!.hasError('required') && myForm.get('libelle')!.touched">Cet champ est obligatoire</span>
+                <span class="erreur" *ngIf="myForm!.get('libelle')!.hasError('minlength') && myForm.get('libelle')!.touched">Libelle court</span>
+                <span class="erreur" *ngIf="myForm!.get('libelle')!.hasError('maxlength') && myForm.get('libelle')!.touched">libelle Long</span>
               </div>
 
             <!-- Delai jour -->
             <div class="input">
               <label>Delai <span class="obligatoire">*</span></label>
-              <input class="telephone-input" type="number" class="form-control" placeholder="Nombre de jours" >
+              <input class="telephone-input" type="number" class="form-control" placeholder="Nombre de jours" formControlName="delai"
+              [ngClass]="{'is-valid': myForm.get('delai')!.valid && myForm.get('delai')!.touched}"
+                [ngClass]="{'is-invalid': myForm.get('delai')!.invalid && myForm.get('delai')!.touched}"
+              >
+
+              <span class="erreur" *ngIf="myForm!.get('delai')!.hasError('required') && myForm.get('delai')!.touched">Cet champ est obligatoire</span>
+                <span class="erreur" *ngIf="myForm!.get('delai')!.hasError('minlength') && myForm.get('delai')!.touched">Delai court</span>
+                <span class="erreur" *ngIf="myForm!.get('delai')!.hasError('maxlength') && myForm.get('delai')!.touched">Delai Long</span>
             </div>
 
             <!-- Delai jour -->
             <div class="input">
                 <label>Nombre de pluies <span class="obligatoire">*</span></label>
-                <input class="telephone-input" type="number" class="form-control" placeholder="Nombre de jours" >
+                <input class="telephone-input" type="number" class="form-control" placeholder="Nombre de jours" formControlName="nombrepluie"
+                [ngClass]="{'is-valid': myForm.get('nombrepluie')!.valid && myForm.get('nombrepluie')!.touched}"
+                [ngClass]="{'is-invalid': myForm.get('nombrepluie')!.invalid && myForm.get('nombrepluie')!.touched}"
+                >
+
+                <span class="erreur" *ngIf="myForm!.get('nombrepluie')!.hasError('required') && myForm.get('nombrepluie')!.touched">Cet champ est obligatoire</span>
+                <span class="erreur" *ngIf="myForm!.get('nombrepluie')!.hasError('minlength') && myForm.get('nombrepluie')!.touched">Nombre de pluie court</span>
+                <span class="erreur" *ngIf="myForm!.get('nombrepluie')!.hasError('maxlength') && myForm.get('nombrepluie')!.touched">Nombre de pluie Long</span>
               </div>
 
+
               <div class="input">
-                <label>Varietés <span class="obligatoire">*</span></label>     
-                <select  class="form-control telephone-input" >
-                <option style="color: #000;" value="Choisir un type" selected disabled>Choisir une varieté</option>
-                  <option value="test">test</option>
-                  <option value="test">test</option>
+
+                <label>Produit Agricole <span class="obligatoire">*</span></label>     
+                <select  class="form-control telephone-input" formControlName="produit" 
+                [ngClass]="{'is-valid': myForm.get('produit')!.valid && myForm.get('produit')!.touched}"
+                [ngClass]="{'is-invalid': myForm.get('produit')!.invalid && myForm.get('produit')!.touched}"
+                >
+                <option style="color: #000;" value="Choisir un type" selected disabled>Choisir un produit</option>
+                  <option *ngFor="let produit of lesProduitAgricoleRecuperer" value="{{produit.id}}">{{produit.nom}}</option>
                 </select>
+  
+                <span class="erreur" *ngIf="myForm!.get('produit')!.hasError('required') && myForm.get('produit')!.touched">Cet champ est obligatoire</span>
+  
               </div>
+  
+  
+  
+              <div class="input">
+                <label>Varietes <span class="obligatoire">*</span></label>     
+                <select  class="form-control telephone-input" formControlName="varietes"
+                [ngClass]="{'is-valid': myForm.get('varietes')!.valid && myForm.get('varietes')!.touched}"
+                [ngClass]="{'is-invalid': myForm.get('varietes')!.invalid && myForm.get('varietes')!.touched}"
+                >
+                <option style="color: #000;" value="Choisir une variete" selected disabled>Choisir une semence</option>
+                  <option *ngFor="let varietes of lesvarietesPourLeProduitActive" value="{{varietes.id}}">{{varietes.nom}}</option>
+                </select>
+        
+                <span class="erreur" *ngIf="myForm!.get('varietes')!.hasError('varietes') && myForm.get('varietes')!.touched">Cet champ est obligatoire</span>
+              </div>
+  
 
 
         

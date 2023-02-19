@@ -29,9 +29,29 @@ label{
     font-weight: bold;
 }
 
+.erreur{
+    color: red;
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.is-invalid{
+    border-color: red;
+}
+.is-valid{
+    border-color: #14AE5C;
+}
+
+
 @media screen and (max-width:300px){
     .libelle{
         font-size: 1em!important;
     }
 }
+
+.mt-100{margin-top: 100px}body{background: #00B4DB;background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);background: linear-gradient(to right, #0083B0, #00B4DB);color: #514B64;min-height: 100vh}
 

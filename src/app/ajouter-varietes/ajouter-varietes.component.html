@@ -13,67 +13,132 @@
 
     <div class="ajout-champ-modal">
       <div class="containeur">
-          <form class="otpForm">
+          <form class="otpForm" [formGroup]="myForm" (ngSubmit)="submitForm()">
             <!-- titre -->
             <div class="input">
               <label>Nom <span class="obligatoire" >*</span></label>
-              <input class="telephone-input" type="text" class="form-control" placeholder="Arachide" 
-              >
+              <input class="telephone-input" type="text" class="form-control" placeholder="Arachide" formControlName="nom"
+              [ngClass]="{'is-invalid': myForm.get('nom')!.invalid && myForm.get('nom')!.touched}"
+              [ngClass]="{'is-valid': myForm.get('nom')!.valid && myForm.get('nom')!.touched}">
+              
+
+              <span class="erreur" *ngIf="myForm!.get('nom')!.hasError('required') && myForm.get('nom')!.touched">Cet champ est obligatoire</span>
+              <span class="erreur" *ngIf="myForm!.get('nom')!.hasError('minlength') && myForm.get('nom')!.touched">Nom court</span>
+              <span class="erreur" *ngIf="myForm!.get('nom')!.hasError('maxlength') && myForm.get('nom')!.touched">Nom Long</span>
+            
             </div>
             <!-- Sous titre -->
-            <div class="input">
+            <!-- <div class="input">
               <label>Durée de vie <span class="obligatoire">*</span></label>
-              <input class="telephone-input" type="text" class="form-control" placeholder="Sous titre" >
-            </div>
+              <input class="telephone-input" type="text" class="form-control" placeholder="Sous titre" 
+              [ngClass]="{'is-invalid': myForm.get('duree')!.invalid && myForm.get('duree')!.touched}"
+              [ngClass]="{'is-valid': myForm.get('duree')!.valid && myForm.get('duree')!.touched}">
+              
+              <span class="erreur" *ngIf="myForm!.get('duree')!.hasError('required') && myForm.get('duree')!.touched">Cet champ est obligatoire</span>
+              <span class="erreur" *ngIf="myForm!.get('duree')!.hasError('minlength') && myForm.get('duree')!.touched">Duree court</span>
+              <span class="erreur" *ngIf="myForm!.get('duree')!.hasError('maxlength') && myForm.get('duree')!.touched">Duree Long</span>
+            
+            </div> -->
 
 
             <!-- Ressource -->
             <div class="input">
-              <label>Cycle</label>
-              <input class="telephone-input" type="number" class="form-control" placeholder="8 en mois" >
+              <label>Cycle <span class="obligatoire">*</span></label>
+              <input class="telephone-input" type="number" class="form-control" placeholder="8 en mois" formControlName="cycle"
+              [ngClass]="{'is-invalid': myForm.get('cycle')!.invalid && myForm.get('cycle')!.touched}"
+              [ngClass]="{'is-valid': myForm.get('cycle')!.valid && myForm.get('cycle')!.touched}">
+              
+              <span class="erreur" *ngIf="myForm!.get('cycle')!.hasError('required') && myForm.get('cycle')!.touched">Cet champ est obligatoire</span>
+              <span class="erreur" *ngIf="myForm!.get('cycle')!.hasError('minlength') && myForm.get('cycle')!.touched">Cycle court</span>
+              <span class="erreur" *ngIf="myForm!.get('cycle')!.hasError('maxlength') && myForm.get('cycle')!.touched">Cycle Long</span>
+            
             </div>
 
             <!-- Ressource -->
             <div class="input">
-                <label>Taille final</label>
-                <input class="telephone-input" type="number" class="form-control" placeholder="80 en cm" >
+                <label>Taille final <span class="obligatoire">*</span></label>
+                <input class="telephone-input" type="number" class="form-control" placeholder="80 en cm" formControlName="taillefinal"
+                
+              [ngClass]="{'is-invalid': myForm.get('taillefinal')!.invalid && myForm.get('taillefinal')!.touched}"
+              [ngClass]="{'is-valid': myForm.get('taillefinal')!.valid && myForm.get('taillefinal')!.touched}"
+                >
+
+              <span class="erreur" *ngIf="myForm!.get('taillefinal')!.hasError('required') && myForm.get('taillefinal')!.touched">Cet champ est obligatoire</span>
+              <span class="erreur" *ngIf="myForm!.get('taillefinal')!.hasError('minlength') && myForm.get('taillefinal')!.touched">Taille court</span>
+              <span class="erreur" *ngIf="myForm!.get('taillefinal')!.hasError('maxlength') && myForm.get('taillefinal')!.touched">Taille Long</span>
+            
+
             </div>
 
             <!-- Ressource -->
             <div class="input">
-                <label>Rendement</label>
-                <input class="telephone-input" type="number" class="form-control" placeholder="80 en cm" >
+                <label>Rendement <span class="obligatoire">*</span></label>
+                <input class="telephone-input" type="number" class="form-control" placeholder="50 kg" formControlName="rendement"
+                [ngClass]="{'is-invalid': myForm.get('rendement')!.invalid && myForm.get('rendement')!.touched}"
+                [ngClass]="{'is-valid': myForm.get('rendement')!.valid && myForm.get('rendement')!.touched}"
+                >
+
+                <span class="erreur" *ngIf="myForm!.get('rendement')!.hasError('required') && myForm.get('rendement')!.touched">Cet champ est obligatoire</span>
+              <span class="erreur" *ngIf="myForm!.get('rendement')!.hasError('minlength') && myForm.get('rendement')!.touched">Rendement court</span>
+              <span class="erreur" *ngIf="myForm!.get('rendement')!.hasError('maxlength') && myForm.get('rendement')!.touched">Rendement Long</span>
+            
             </div>
 
             <!-- Ressource -->
             <div class="input">
                 <label>Lien</label>
-                <input class="telephone-input" type="number" class="form-control" placeholder="80 en cm" >
+                <input class="telephone-input" type="text" class="form-control" placeholder="ressource externe" formControlName="lien"
+                [ngClass]="{'is-invalid': myForm.get('lien')!.invalid && myForm.get('lien')!.touched}"
+                [ngClass]="{'is-valid': myForm.get('lien')!.valid && myForm.get('lien')!.touched}"
+                >
+
+                
+                <span class="erreur" *ngIf="myForm!.get('lien')!.hasError('required') && myForm.get('lien')!.touched">Cet champ est obligatoire</span>
+              <span class="erreur" *ngIf="myForm!.get('lien')!.hasError('minlength') && myForm.get('lien')!.touched">Lien court</span>
+              <span class="erreur" *ngIf="myForm!.get('lien')!.hasError('maxlength') && myForm.get('lien')!.touched">Lien Long</span>
+            
             </div>
 
 
-            <div class="input">
+              <div class="input">
                 <label>Produit Agricole <span class="obligatoire">*</span></label>     
-                <select  class="form-control telephone-input" >
-                <option style="color: #000;" value="Choisir un type" selected disabled>Choisir un produit</option>
-                  <option value="test">test</option>
+                <select  class="form-control telephone-input" formControlName="produit" >
+                  <option style="color: #000;" value="Choisir un type" selected disabled>Choisir un produit</option>
+                  <option *ngFor="let produit of produitsAgricoles" value="{{produit.id}}">{{produit.nom}}</option>
                 </select>
+
+                <span class="erreur" *ngIf="myForm!.get('produit')!.hasError('required') && myForm.get('lien')!.touched">Cet champ est obligatoire</span>
+
               </div>
 
 
              <!-- photo du champ -->
              <div class="input">
-  
+    
               <label>Photo</label>
-              <input type="file" id="avatar"  class="form-control" name="avatar"
-              multiple   >
+              <input type="file" id="avatar"  class="form-control" name="avatar"  accept="image/png, image/jpeg"
+              multiple (change)="onFileChangeVariete($event)"  formControlName="file"
+              [ngClass]="{'is-invalid': myForm.get('file')!.invalid && myForm.get('file')!.touched}"
+              [ngClass]="{'is-valid': myForm.get('file')!.valid && myForm.get('file')!.touched}">
+
+
+              <span class="erreur" *ngIf="myForm!.get('file')!.hasError('required') && myForm.get('file')!.touched">Cet champ est obligatoire</span>
+
             </div>
   
-            <!-- description du pub -->
             <div class="input">
-  
+    
+              
               <label>Description <span class="obligatoire">*</span></label>
-              <textarea style="height: 200px;" class="telephone-input" type="text" class="form-control" >Description</textarea>
+              <textarea style="height: 200px;" class="telephone-input" type="text" class="form-control" formControlName="description" placeholder="Description"
+              [ngClass]="{'is-invalid': myForm.get('description')!.invalid && myForm.get('description')!.touched}"
+              [ngClass]="{'is-valid': myForm.get('description')!.valid && myForm.get('description')!.touched}"
+              >Description</textarea>
+
+
+              <span class="erreur" *ngIf="myForm!.get('description')!.hasError('required') && myForm.get('description')!.touched">Cet champ est obligatoire</span>
+              <span class="erreur" *ngIf="myForm!.get('description')!.hasError('minlength') && myForm.get('description')!.touched">Description court</span>
+              <span class="erreur" *ngIf="myForm!.get('description')!.hasError('maxlength') && myForm.get('description')!.touched">Description Long</span>
             </div >
   
             <div class="input">

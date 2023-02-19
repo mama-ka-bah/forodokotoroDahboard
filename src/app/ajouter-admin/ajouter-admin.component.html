@@ -13,43 +13,126 @@
 
     <div class="ajout-champ-modal">
       <div class="containeur">
-          <form class="otpForm">
-            <!-- titre -->
+          <form class="otpForm"  [formGroup]="form" (ngSubmit)="onSubmit()">
+
             <div class="input">
-              <label>Nom complet<span class="obligatoire" >*</span></label>
-              <input class="telephone-input" type="text" class="form-control" placeholder="Mahamadou KEITA"
+              <label>Numéro de télephone <span class="obligatoire">*</span></label>
+              <input class="telephone-input" type="text" class="form-control" placeholder="82644606" formControlName="username"
+      
+              [ngClass]="{'is-invalid': form.get('username')!.invalid && form.get('username')!.touched}"
+              [ngClass]="{'is-valid': form.get('username')!.valid && form.get('username')!.touched}" >
+              <!-- [ngStyle]="{'border-color': (form.get('username')!.valid && form.get('username')!.touched) ? 'green' : 'red' }" -->            
+              
+              <span class="erreur" *ngIf="form!.get('username')!.hasError('required') && form.get('username')!.touched">Cet champ est obligatoire</span>
+              <span class="erreur" *ngIf="form!.get('username')!.hasError('minlength') && form.get('username')!.touched">Numero court</span>
+              <span class="erreur" *ngIf="form!.get('username')!.hasError('maxlength') && form.get('username')!.touched">Numero Long</span>
+            </div>
+
+            <div class="input">
+              <label>Nom complet <span class="obligatoire">*</span></label>
+              <input class="telephone-input" type="tel" class="form-control"  placeholder="Aboubacar keïta" formControlName="nomComplet"
+              
+              [ngClass]="{'is-invalid': form.get('nomComplet')!.invalid && form.get('nomComplet')!.touched}"
+              [ngClass]="{'is-valid': form.get('nomComplet')!.valid && form.get('nomComplet')!.touched}"
               >
+            
+              <span class="erreur" *ngIf="form!.get('nomComplet')!.hasError('required') && form.get('nomComplet')!.touched">Cet champ est obligatoire</span>
+              <span class="erreur" *ngIf="form!.get('nomComplet')!.hasError('minlength') && form.get('nomComplet')!.touched">Nom court</span>
+              <span class="erreur" *ngIf="form!.get('nomComplet')!.hasError('maxlength') && form.get('nomComplet')!.touched">Nom Long</span>
+           
             </div>
 
-            <!-- Sous titre -->
             <div class="input">
+              <label>Adresse <span class="obligatoire">*</span></label>
+              <input class="telephone-input" type="tel" class="form-control"  placeholder="Aboubacar keïta" formControlName="adresse"
+              
+              [ngClass]="{'is-invalid': form.get('adresse')!.invalid && form.get('adresse')!.touched}"
+              [ngClass]="{'is-valid': form.get('adresse')!.valid && form.get('adresse')!.touched}"
+              >
+            
+              <span class="erreur" *ngIf="form!.get('adresse')!.hasError('required') && form.get('adresse')!.touched">Cet champ est obligatoire</span>
+              <span class="erreur" *ngIf="form!.get('adresse')!.hasError('minlength') && form.get('adresse')!.touched">Adresse court</span>
+              <span class="erreur" *ngIf="form!.get('adresse')!.hasError('maxlength') && form.get('adresse')!.touched">Adresse Long</span>
+            </div>
+
+            <div class="input"> 
               <label>Email <span class="obligatoire">*</span></label>
-              <input class="telephone-input" type="email" class="form-control" placeholder="kmahamadou858@gmail.com">
+              <input class="telephone-input" type="email" class="form-control" placeholder="mahamadou@gmail.com" formControlName="email"
+      
+              [ngClass]="{'is-invalid': form.get('email')!.invalid && form.get('email')!.touched}"
+              [ngClass]="{'is-valid': form.get('email')!.valid && form.get('email')!.touched}"
+              >
+            
+              <span class="erreur" *ngIf="form.get('email')!.hasError('required') && form.get('email')!.touched">Ce champ est obligatoire</span>
+              <span class="erreur" *ngIf="form.get('email')!.hasError('maxlength') && form.get('email')!.touched">Email Long</span>
+              <span class="erreur" *ngIf="form.get('email')!.hasError('pattern') && form.get('email')!.touched">Email invalide</span>
+            
             </div>
 
-            <!-- Sous titre -->
-            <div class="input">
-              <label>Mot de passe <span class="obligatoire">*</span></label>
-              <input class="telephone-input" type="password" class="form-control" placeholder="********">
-            </div>
-            <!-- Sous titre -->
-            <div class="input">
-              <label>Confirmer le mot de passe <span class="obligatoire">*</span></label>
-              <input class="telephone-input" type="password" class="form-control" placeholder="********">
-            </div>
 
             <div class="input">
               <label>Role <span class="obligatoire">*</span></label>     
-              <select  class="form-control telephone-input" >
-              <option style="color: #000;" value="Choisir un type" selected disabled>Choisir un role</option>
-                <option value="test">admin</option>
-              </select>
+              
+                <!-- <label>Varietés <span class="obligatoire">*</span></label>     
+                <select  class="form-control telephone-input">
+                <option style="color: #000;" value="Choisir un type" selected disabled>Choisir un role</option>
+                  <option value="admin">test</option>
+                  <option value="professio">test</option>
+                </select> -->
+
+                <ng-multiselect-dropdown formControlName="roles"
+                [placeholder]="'Selectionner les roles'"
+                [settings]="dropdownSettings"
+                [data]="dropdownList"
+                (onSelect)="onItemSelect($event)"
+              >
+              </ng-multiselect-dropdown>
+
+
+              <!-- <span class="erreur" *ngIf="form!.get('roles')!.hasError('required') && form.get('roles')!.touched">Cet champ est obligatoire</span> -->
+
             </div>
-  
+            
+
+
+            <div class="input">
+              <label>Mot de passe <span class="obligatoire">*</span></label>
+              <input class="telephone-input" type="password" class="form-control"  placeholder="Mot de passe" formControlName="password"
+              
+              [ngClass]="{'is-invalid': form.get('password')!.invalid && form.get('password')!.touched}"
+              [ngClass]="{'is-valid': form.get('password')!.valid && form.get('password')!.touched}"
+              >
+            
+              <span class="erreur" *ngIf="form!.get('password')!.hasError('required') && form.get('password')!.touched">Cet champ est obligatoire</span>
+              <span class="erreur" *ngIf="form!.get('password')!.hasError('minlength') && form.get('password')!.touched">Numero court</span>
+              <span class="erreur" *ngIf="form!.get('password')!.hasError('maxlength') && form.get('password')!.touched">Numero Long</span>
+      
+            </div>
+            
+           
+      
+            <div class="input">
+              <label>Confirmer Le mot de passe<span class="obligatoire">*</span></label>
+              <input class="telephone-input" type="password" class="form-control" placeholder="Retaper le mot de passe" formControlName="confPassword"
+              
+              [ngClass]="{'is-invalid': form.get('confPassword')!.invalid && form.get('confPassword')!.touched}"
+              [ngClass]="{'is-valid': form.get('confPassword')!.valid && form.get('confPassword')!.touched}"
+      
+              >
+            
+              <span class="erreur" *ngIf="form!.get('confPassword')!.hasError('required') && form.get('confPassword')!.touched">Cet champ est obligatoire</span>
+              <span class="erreur" *ngIf="form!.get('confPassword')!.hasError('minlength') && form.get('confPassword')!.touched">Mot de passe court</span>
+              <span class="erreur" *ngIf="form!.get('confPassword')!.hasError('maxlength') && form.get('confPassword')!.touched">Mot de passe Long</span>
+      
+              <!-- <span class="erreur" *ngIf="erreur">Mot de passe differents</span> -->
+         
+            </div>
+      
             <div class="input">
               <button class="envoyer-input" type="submit" expand="block" >Ajouter</button>
             </div>
           </form>
+
   
         </div>
       

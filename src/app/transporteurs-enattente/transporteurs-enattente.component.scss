@@ -118,5 +118,26 @@
   .card .actions .follow-info     h3 a:hover span {
     color: #14AE5C;
   }
+
+
+  .ContFiltreChamp{
+    width: 100%;
+     margin-bottom: 30px;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+  }
+  .ContFiltreChamp + div {
+    font-size: 18px;
+  }
+  .filtreChamp{
+    width: 30%;
+    // display: flex;
+    // justify-content: flex-end;
+    // align-items: flex-end;
+    // margin-bottom: 20px;
+    float: right;
+    border: 5px solid #14AE5C;
+  }
  
   

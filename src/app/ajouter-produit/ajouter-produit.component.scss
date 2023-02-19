@@ -82,45 +82,22 @@ label{
     color: #000;
 }
 
-// .otpForm{
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     // flex-basis: 50%;
-//     // height: 50vh;
-//     justify-content: space-around;
-//     gap: 20px;
-// }
+.erreur{
+    color: red;
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
 
+    display: flex;
+    justify-content: center;
+}
 
-// .erreur{
-//     color: red;
-//     text-align: center;
-//     width: 100%;
-//     font-size: 12px;
-// }
-
-
-// .is-invalid{
-//     border-color: red;
-// }
-// .is-valid{
-//     border-color: #14AE5C;
-// }
-
-
-// .ajout-champ-modal{
-//     height: 100%;
-// }
-
-// //style du swal
-// .small-text {
-//     font-size: 12px;
-//   }
-
-// .obligatoire{
-//     color: red;
-// }
+.is-invalid{
+    border-color: red;
+}
+.is-valid{
+    border-color: #14AE5C;
+}
 
 .obligatoire{
     color: red;

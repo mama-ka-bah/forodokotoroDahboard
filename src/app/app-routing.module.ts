@@ -31,6 +31,14 @@ const routes: Routes = [
   ]
 },
 
+{ path:'utilisateurs',component:UtilisateursComponent,
+  
+    children:[
+      { path:'agriculteur-attente',component:AgriculteursEnattenteComponent},
+      { path:'transporteurs-attente',component:TransporteursEnattenteComponent}
+    ]
+    },
+
   
   { path:'connexion',component:ConnexionComponent }, 
   { path:'ajout-admin',component:AjouterAdminComponent },
