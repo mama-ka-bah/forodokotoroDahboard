@@ -77,7 +77,7 @@ export class AjouterPrevisionComponent implements OnInit{
     const iduser = this.currentUser.id;
 
   const simulation = {
-    "libelle":this.myForm.controls.libelle.value,
+    "nom":this.myForm.controls.libelle.value,
     "delaijour":this.myForm.controls.delai.value,
     "nbrepluienecessaire":this.myForm.controls.nombrepluie.value,
     "varietes":{
@@ -124,11 +124,9 @@ export class AjouterPrevisionComponent implements OnInit{
                   heightAuto:false,
                 })
               }
-              
             })                
           } 
         })
-
      //orrive là lorsque les champs nesont pas validé
     } else {
       this.erreur = true;
@@ -136,7 +134,5 @@ export class AjouterPrevisionComponent implements OnInit{
       console.log("veuillez remplir tous les champs");
   }
 }
-
-
 
 }
