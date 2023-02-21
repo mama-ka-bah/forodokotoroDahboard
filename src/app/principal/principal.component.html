@@ -13,11 +13,11 @@
             </li> 
           -->
 
-          <li (click)=" autre()" class="li" routerLink="/forodokotoro/accueil" routerLinkActive="active">
+          <li *ngIf="admin || superadmin" (click)=" autre()" class="li" routerLink="/forodokotoro/accueil" routerLinkActive="active">
             <a  class="item"><span class="fa fa-home" style="font-size: 25px;"></span> Accueil</a>
         </li>
 
-          <li (click)=" autre()" class="li" routerLink="/forodokotoro/listProduits" routerLinkActive="active">
+          <li  (click)=" autre()" class="li" routerLink="/forodokotoro/listProduits" routerLinkActive="active">
               <a  class="item"><span class="fa-solid fa-wheat-awn" style="font-size: 25px;"></span> Agricultures</a>
           </li>
 
@@ -29,7 +29,7 @@
             <a  class="item"><span class="fa fa-cogs" style="font-size: 25px;"></span> Parametres</a>
           </li>
 
-          <li class="li">
+          <li class="li" (click)="deconnexion()">
             <a  class="item" href="#" style="color: red; font-weight: bold;"><span class="fa fa-sign-out" aria-hidden="true" style="font-size: 25px;"></span>Deconnexion</a>
           </li>
         </ul>
@@ -63,10 +63,10 @@
               gap: 20px;"
               >
 
-                <li class="nav-item" [ngClass]="{'active1': activedAgri}" (click)="activationAgri()" routerLink="/forodokotoro/agriculteur-attente" style="padding: 5px; cursor: pointer;  ">
+                <li *ngIf="admin || superadmin"  class="nav-item" [ngClass]="{'active1': activedAgri}" (click)="activationAgri()" routerLink="/forodokotoro/agriculteur-attente" style="padding: 5px; cursor: pointer;  ">
                     <a style="color: #000;" [ngClass]="{'active1': activedAgri}" class="nav-link">Agriculteurs en enttente</a>
                 </li>
-                <li class="nav-item" [ngClass]="{'active1': activedTrans}" (click)="activationTrans()" routerLink="/forodokotoro/transporteurs-attente" style="padding: 5px; cursor: pointer; ">
+                <li *ngIf="admin || superadmin"  class="nav-item" [ngClass]="{'active1': activedTrans}" (click)="activationTrans()" routerLink="/forodokotoro/transporteurs-attente" style="padding: 5px; cursor: pointer; ">
                     <a style="color: #000;" [ngClass]="{'active1': activedTrans}" class="nav-link" >Transporteurs en enttente</a>
                 </li>
                
@@ -75,16 +75,19 @@
 
                   <button routerLink="/forodokotoro/notification" type="button" class="btn btn-primary position-relative" style="background-color: #14AE5C; border-color: #14AE5C;">
                     <i class="fa-solid fa-bell"></i>
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                       99+
                       <span class="visually-hidden">unread messages</span>
-                    </span>
+                    </span> -->
                   </button>
 
                 </li>
 
                 <li class="nav-item">
-                  <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 50px;"
+                  <img *ngIf="currentUser.photo != null" src="{{currentUser.photo}}" class="rounded-circle" style="width: 50px; height: 50px;"
+                  alt="Avatar" />
+
+                  <img *ngIf="currentUser.photo == null" src="../../assets/images/profil.png" class="rounded-circle" style="width: 50px;"
                   alt="Avatar" />
                 </li>
 

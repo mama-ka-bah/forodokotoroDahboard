@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 const AUTH_API = 'http://localhost:8081/agriculteur/';
 
 const AUTH_API1 = 'http://localhost:8081/champs/';
+const AUTH_API2 = 'http://localhost:8081/cultive/';
+
 
 @Injectable({
   providedIn: 'root'
@@ -41,7 +43,7 @@ export class AgriculteurService {
 
 
   recupererTousLesChamp():Observable<any>{
-    return this.http.get(AUTH_API + "recupererchampactives");
+    return this.http.get(AUTH_API1 + "recupererchampactives");
   }
 
   recupererTousLesParserelle():Observable<any>{
@@ -49,7 +51,7 @@ export class AgriculteurService {
   }
 
   recupererTousLesCultive():Observable<any>{
-    return this.http.get(AUTH_API1 + "recupererlesparsserelle");
+    return this.http.get(AUTH_API2 + "recupererlescultive");
   }
 
   

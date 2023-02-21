@@ -17,6 +17,11 @@ export class AjouterProduitComponent implements OnInit{
   CurrentUser:any;
   resultatAjoutProduit:any;
 
+  rolutilisateur: string[] = [];
+  admin:boolean = false;
+  professionnel:boolean = false;
+  superadmin:boolean = false;
+
 
   constructor(
     private storageService: TokenStorageService,
@@ -27,6 +32,22 @@ export class AjouterProduitComponent implements OnInit{
 
   ngOnInit(): void {
     this.CurrentUser = this.storageService.getUser();
+
+    this.rolutilisateur = this.CurrentUser.roles;
+
+    if(this.rolutilisateur.includes("ROLE_ADMIN") == true){
+      this.admin = true;
+      this.superadmin = false;
+      this.professionnel = false;
+    }else if(this.rolutilisateur.includes("ROLE_SUPERADMIN")){
+      this.superadmin = true;
+      this.admin = false;
+      this.professionnel = false;
+    }else{
+      this.professionnel = true;
+      this.superadmin = false;
+      this.admin = false;
+    }
   }
 
   form = new FormGroup({

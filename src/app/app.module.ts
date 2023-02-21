@@ -26,6 +26,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { httpInterceptorProviders } from 'src/_helpers/http.interceptor';
 
 
 
@@ -67,7 +68,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     MatNativeDateModule,
     NgMultiSelectDropDownModule.forRoot()
     ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

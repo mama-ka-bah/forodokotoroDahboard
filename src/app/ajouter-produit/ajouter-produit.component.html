@@ -69,7 +69,7 @@
                 <span class="erreur" *ngIf="form!.get('description')!.hasError('maxlength') && form.get('description')!.touched">Description Long</span>
               </div >
     
-              <div class="input">
+              <div class="input" *ngIf="professionnel">
                 <button class="envoyer-input" type="submit" expand="block" >Ajouter</button>
               </div>
             </form>

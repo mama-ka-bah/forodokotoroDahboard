@@ -5,6 +5,7 @@ import { UtilisateursService } from 'src/services/utilisateurs.service';
 import Swal from 'sweetalert2';
 import * as $ from 'jquery';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { TokenStorageService } from 'src/services/token-storage.service';
 
 
 
@@ -52,7 +53,30 @@ dropdownSettings = {};
 
 mesroles: string[] =[];
 
+currentUser:any;
+rolutilisateur: string[] = [];
+admin:boolean = false;
+professionnel:boolean = false;
+superadmin:boolean = false;
+
   ngOnInit(): void {
+
+    this.currentUser = this.tokenStorageService.getUser();
+    this.rolutilisateur = this.currentUser.roles;
+
+    if(this.rolutilisateur.includes("ROLE_ADMIN") == true){
+      this.admin = true;
+      this.superadmin = false;
+      this.professionnel = false;
+    }else if(this.rolutilisateur.includes("ROLE_SUPERADMIN")){
+      this.superadmin = true;
+      this.admin = false;
+      this.professionnel = false;
+    }else{
+      this.professionnel = true;
+      this.superadmin = false;
+      this.admin = false;
+    }
 
     this.dropdownList = [
       { text: "Administrateur", role: "admin" },
@@ -87,6 +111,7 @@ mesroles: string[] =[];
   constructor(
     private utilisateurService:UtilisateursService,
     private router : Router,
+    private tokenStorageService: TokenStorageService
   ){}
 
   

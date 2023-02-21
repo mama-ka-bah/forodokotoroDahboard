@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgriculteurService } from 'src/services/agriculteur.service';
 import { CommunauteService } from 'src/services/communaute.service';
+import { NotificationService } from 'src/services/notification.service';
 import { StockService } from 'src/services/stock.service';
 import { TransporteurService } from 'src/services/transporteur.service';
 import { UtilisateursService } from 'src/services/utilisateurs.service';
@@ -18,6 +19,10 @@ export class AccueilComponent implements OnInit{
   stockRestant:any;
   stockVendu:any;
   lesChampActives:any;
+  lesParserelle:any;
+  lesCultives:any;
+
+  notifsRecent:any;
 
 
   constructor(
@@ -25,7 +30,8 @@ export class AccueilComponent implements OnInit{
     private transporteurService: TransporteurService,
     private agriculteurService: AgriculteurService,
     private communauteService: CommunauteService,
-    private stockService: StockService
+    private stockService: StockService,
+    private notificationService: NotificationService
 
     ){}
 
@@ -36,6 +42,10 @@ export class AccueilComponent implements OnInit{
     this.recueperLesPublications();
     this.recupererStockRestant();
     this.recupererStockVendu();
+    this.recueperLesChamp();
+    this.recueperLesParserelle();
+    this.recueperLesCultive();
+    this. recupererQuatreDernierNotif();
   }
 
   recupererTousLesUtilisateurs(){
@@ -80,6 +90,22 @@ export class AccueilComponent implements OnInit{
     })
   }
 
+  recueperLesParserelle(){
+    this.agriculteurService.recupererTousLesChamp().subscribe(data =>{
+      this.lesParserelle = data;
+    })
+  }
 
+  recueperLesCultive(){
+    this.agriculteurService.recupererTousLesCultive().subscribe(data =>{
+      this.lesCultives = data;
+    })
+  }
+
+  recupererQuatreDernierNotif(){
+    this.notificationService.recupererQuatresNotifsNotification().subscribe(data =>{
+      this.notifsRecent = data;
+    })
+  }
 
 }

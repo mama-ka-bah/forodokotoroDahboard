@@ -20,6 +20,10 @@ export class ConnexionComponent {
   roles: string[] = [];
   envoyer:boolean = false;
 
+  admin:boolean = false;
+  professionnel:boolean = false;
+  superadmin:boolean = false;
+
   form = new FormGroup({
     username: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(9)]),
     password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(30)]),
@@ -46,16 +50,29 @@ export class ConnexionComponent {
     this.utilisateursService.login(username, password).subscribe({
       next: data => {
        
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
+        // this.isLoginFailed = false;
+        // this.isLoggedIn = true;
         this.tokenStorage.saveUser(data);
         this.roles = this.tokenStorage.getUser().roles;
         console.log(data);
         
-        if(this.isLoggedIn){
+    
+        if(this.roles.includes("ROLE_ADMIN" || this.roles.includes("ROLE_SUPERADMIN")) == true){
+          this.isLoginFailed = false;
+          this.isLoggedIn = true;
           this.router.navigateByUrl('/forodokotoro/accueil');
-          //this.reloadPage();
-       }
+        }else if(this.roles.includes("ROLE_PROFESSIONNEL") ){
+          this.isLoginFailed = false;
+          this.isLoggedIn = true;
+          this.router.navigateByUrl('/forodokotoro/listProduits');
+        }else{
+          this.isLoginFailed = true;
+          this.isLoggedIn = false;
+        }
+        
+      //   if(this.isLoggedIn){
+      //     this.router.navigateByUrl('/forodokotoro/accueil');
+      //  }
       },
         error: err => {
           //en cas d'erreur d'erreur

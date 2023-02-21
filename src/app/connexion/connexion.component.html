@@ -44,15 +44,15 @@
       </div>
 
       <div class="oublie">
-        Mot de passe oublié ?
+        <!-- Mot de passe oublié ? -->
       </div>
 
       <!-- <div *ngIf="form.valid && envoyer && isLoginFailed" class="alert alert-danger" role="alert"> -->
         <!-- Login failed: {{ errorMessage }} -->
-        <span class="erreur" *ngIf="form.valid && envoyer && isLoginFailed">Numero ou Mot de passe incorrect</span>
+        <span class="erreur" *ngIf="form.valid && envoyer && isLoginFailed" style="font-size: 18px;">Numero ou Mot de passe incorrect</span>
       <!-- </div> -->
 
-      <div class="input envoie">
+      <div class="input envoie" style="margin: 20px;">
         <!-- routerLink="/tabs/tab1" -->
         <button class="envoyer-input" type="submit" expand="block" [disabled]="form.invalid">SE CONNECTER</button>
       </div>
