@@ -26,8 +26,12 @@ export class UtilisateursService {
     );
   }
 
+
+recupererTousLesUtilisateurs(): Observable<any>{
+  return this.http.get(AUTH_API + "recuperertousutilisateur");
+}
+
     // fonction permettant de gerer l'inscription
-  
     register(donneesuser:any): Observable<any> {
     const data:FormData=new FormData();
 
@@ -40,5 +44,6 @@ export class UtilisateursService {
       data
     );
   }
+
 
 }

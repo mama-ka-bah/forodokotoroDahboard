@@ -1,174 +1,36 @@
 <div class="row">
 
     <div class="ContFiltreChamp">
-        <div style="font-size: 18px; color: #000; font-weight: bold;">Produits agricoles</div>
-        <select class="form-select filtreChamp" aria-label="Default select example">
-            <option selected>Fitre par status</option>
-            <option value="tout">tout</option>
-            <option value="encours">En cours</option>
-            <option value="refuser">Refuser</option>
+        <div style="font-size: 18px; color: #000; font-weight: bold;">Transporteurs en attente</div>
+        <select class="form-select filtreChamp" aria-label="Default select example" [(ngModel)]="etat" (change)="evenement($event)">
+            <!-- <option selected></option> -->
+            <option value="tout">TOUT</option>
+            <option value="encours">ENCOURS</option>
+            <option value="rejeter">REJETER</option>
             <!-- <option value="3">Three</option> -->
         </select>
     </div>
 
-    <div class="col-md-3">
 
-        <div class="card ">
+    <div class="col-md-3" *ngFor="let transporteur of transporteurs">
+        <div class="card " >
             <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
+                <img src="{{transporteur.photo}}" class="image1" alt="">
             </div>
             <div class="menu">
                 <div class="opener"><span></span></div>
             </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
+            <h3 class="name" style="font-size: 16px;">{{transporteur.nomcomplet}}</h3>
+            <div class="title" style="font-size: 16px;">{{transporteur.username}}</div>
             <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span></a></h3>
-                    <h3><a href="#"><span>1000</span></a></h3>
+                <div class="follow-info" *ngIf="action">
+                    <h3 (click)="accepterTransporteur(transporteur.username)"><a style="font-size: 20px;"><span><i style="font-size: 18px;" class="fa-solid fa-check"></i></span></a></h3>
+                    <h3 (click)="rejeterTransporteur(transporteur.username)"><a style="font-size: 20px;"><span><i style="font-size: 16px; color: red;" class="fa fa-times" aria-hidden="true"></i></span></a></h3>
                 </div>
-
             </div>
         </div>
     </div>
-    <div class="col-md-3">
 
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
+    <div *ngIf="transporteurs == ''" class="vide">Auccune demande</div>
 
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div>
 </div>

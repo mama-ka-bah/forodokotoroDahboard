@@ -6,7 +6,7 @@
                 <span class="fa-solid fa-users" style="font-size: 25px; color: #000;"></span>
             </div>
             <div class="elt">
-                <span class="valeur">50</span>
+                <span class="valeur" *ngIf="utilisateurs != null">{{utilisateurs.length}}</span>
                 <div class="libelles">
                     <span class="libelle">Total</span>
                     <span class="libelle">utilisateurs</span>
@@ -21,7 +21,7 @@
                 <span class="fa-solid fa-wheat-awn" style="font-size: 25px; color: #000;"></span>
             </div>
             <div class="elt">
-                <span class="valeur">50</span>
+                <span class="valeur" *ngIf="agriculteurs != null">{{agriculteurs.length}}</span>
                 <div class="libelles">
                     <span class="libelle">Total</span>
                     <span class="libelle">agriculteurs</span>
@@ -35,7 +35,7 @@
                 <span  class="bi bi-bank2" style="font-size: 25px; color: #000;"></span>
             </div>
             <div class="elt">
-                <span class="valeur">50</span>
+                <span class="valeur"  *ngIf="transporteurs != null">{{transporteurs.length}}</span>
                 <div class="libelles">
                     <span class="libelle">Total</span>
                     <span class="libelle">Transporteurs</span>
@@ -49,7 +49,7 @@
                 <span class="bi bi-question-circle-fill" style="font-size: 25px; color: #000;"></span>
             </div>
             <div class="elt">
-                <span class="valeur">50</span>
+                <span class="valeur" *ngIf="lesPublivationsOrdonnes != null">{{lesPublivationsOrdonnes.length}}</span>
                 <div class="libelles">
                     <span class="libelle">Nombre</span>
                     <span class="libelle">conseils</span>
@@ -75,9 +75,9 @@
                     <span class="fa-solid fa-car" style="font-size: 25px; color: #000;"></span>
                 </div>
                 <div class="elt1">
-                    <span class="valeur">50 tonnes</span>
+                    <span class="valeur">{{stockRestant/1000}}</span>
                     <div class="libelles">
-                        <span class="libelle">Totale stocks</span>
+                        <span class="libelle">Stocks restant</span>
                     </div>
                    
                 </div>
@@ -88,7 +88,7 @@
                     <span class="fa-solid fa-car" style="font-size: 25px; color: #000;"></span>
                 </div>
                 <div class="elt1">
-                    <span class="valeur">50 tonnes</span>
+                    <span class="valeur">{{stockVendu/1000}}</span>
                     <div class="libelles">
                         <span class="libelle">stocks vendus</span>
                     </div>
@@ -119,7 +119,7 @@
                 </div>
                 <div class="conteneurElt">
                     <span class="libelle">Champ:</span>
-                    <span class="valeur">50</span>
+                    <span class="valeur" *ngIf="lesChampActives != null">{{lesChampActives.length}}</span>
                 </div>
                 <div class="conteneurElt">
                     <span class="libelle">Parserelles:</span>

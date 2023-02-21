@@ -3,253 +3,43 @@
 <div class="row">
 
     
-<div class="ContFiltreChamp">
-    <select class="form-select filtreChamp" aria-label="Default select example">
+<!-- <div class="ContFiltreChamp"> -->
+    <!-- <select class="form-select filtreChamp" aria-label="Default select example">
         <option selected>Fitre par état</option>
         <option value="1">Actives</option>
         <option value="2">Désactive</option>
-        <!-- <option value="3">Three</option> -->
-    </select>
-</div>
-
-<table class="ta
-">
-    <h6 style="color: #14AE5C; font-weight: bold;">SIMULATIONS</h6>
+    </select> -->
+    <div class="input-group" style="display: flex!important; justify-content: flex-end!important; margin-bottom: 25px;">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" style="width: 50%;"/>
+        <button type="button" class="btn btn-outline-primary" style="border-color: #14AE5C; color: #14AE5C;">search</button>
+      </div>
+<!-- </div> -->
+<div class="table-responsive">
+<table class="table">
+    <h6 style="color: #14AE5C; font-weight: bold; font-size: 25px;">Les utilisateurs de Forodokotoro</h6>
     <thead>
       <tr>
         <th  scope="col">Nom complet</th>
         <th  scope="col">Numero de téléphone</th>
         <th  scope="col">Adresse</th>
-        <th  scope="col">Etat</th>
+        <th  scope="col">Email</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>test test</td>
-        <td>test test</td>
-        <td>test test</td>
+      <tr *ngFor="let utilisateur of utilisateurs">
+        <td>{{utilisateur.nomcomplet}}</td>
+        <td>{{utilisateur.username}}</td>
+        <td>{{utilisateur.adresse}}</td>
         <td>
-            <span class="custom-control custom-switch">
+        {{utilisateur.email}}
+            <!-- <span class="custom-control custom-switch">
                 <input type="checkbox" class="custom-control-input" id="customSwitches">
                 <label class="custom-control-label" for="customSwitches"></label>
-            </span>
+            </span> -->
         </td>
       </tr>
-      <tr>
-        <td>test test</td>
-        <td>test test</td>
-        <td>test test</td>
-        <td>
-            <span class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="customSwitches1">
-                <label class="custom-control-label" for="customSwitches1"></label>
-            </span>
-        </td>
-      </tr>
-      <tr>
-        <td>test test</td>
-        <td>test test</td>
-        <td>test test</td>
-        <td>
-            <span class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="customSwitches2">
-                <label class="custom-control-label" for="customSwitches2"></label>
-            </span>
-        </td>
-      </tr>
-      <tr>
-        <td>test test</td>
-        <td>test test</td>
-        <td>test test</td>
-        <td>
-            <span class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="customSwitches3">
-                <label class="custom-control-label" for="customSwitches3"></label>
-            </span>
-        </td>
-      </tr>
-      <tr>
-        <td>test test</td>
-        <td>test test</td>
-        <td>test test</td>
-        <td>
-            <span class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="customSwitches4">
-                <label class="custom-control-label" for="customSwitches4"></label>
-            </span>
-        </td>
-      </tr>
-      <tr>
-        <td>test test</td>
-        <td>test test</td>
-        <td>test test</td>
-        <td>
-            <span class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="customSwitches4">
-                <label class="custom-control-label" for="customSwitches4"></label>
-            </span>
-        </td>
-      </tr>
+     
   </table>
+</div>
     
-    <!-- <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span></a></h3>
-                    <h3><a href="#"><span>1000</span></a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-
-        <div class="card ">
-            <div class="banner">
-                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="image1" alt="">
-            </div>
-            <div class="menu">
-                <div class="opener"><span></span></div>
-            </div>
-            <h3 class="name">Morgan Sweeney</h3>
-            <div class="title">Ant Collector</div>
-            <div class="actions">
-                <div class="follow-info">
-                    <h3><a href="#"><span>12</span> </a></h3>
-                    <h3><a href="#"><span>1000</span> </a></h3>
-                </div>
-
-            </div>
-        </div>
-    </div> -->
 </div>

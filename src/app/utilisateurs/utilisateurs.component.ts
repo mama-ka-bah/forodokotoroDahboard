@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TransporteurService } from 'src/services/transporteur.service';
+import { UtilisateursService } from 'src/services/utilisateurs.service';
 
 export interface PeriodicElement {
   name: string;
@@ -20,18 +22,29 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
 
-/**
- * @title Table that uses the recycle view repeater strategy.
- */
 @Component({
   selector: 'app-utilisateurs',
   templateUrl: './utilisateurs.component.html',
   styleUrls: ['./utilisateurs.component.scss']
 })
 export class UtilisateursComponent implements OnInit {
+
+  utilisateurs:any;
+
+  constructor(
+    private utilisateurService: UtilisateursService,
+    ){}
+
   ngOnInit(): void {
+    this.recupererTousLesUtilisateurs();
   }
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  recupererTousLesUtilisateurs(){
+    this.utilisateurService.recupererTousLesUtilisateurs().subscribe(data =>{
+      this.utilisateurs = data;
+    })
+  }
+
+ 
+
 }

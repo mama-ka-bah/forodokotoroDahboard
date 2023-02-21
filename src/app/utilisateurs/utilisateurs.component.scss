@@ -193,6 +193,10 @@ td {
   align-items: flex-start;
   width: 100%;
   padding-left: 5px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 th {
@@ -215,6 +219,49 @@ th {
   color: #14AE5C;
   font-weight: bold;
 }
+
+
+
+//le conteneur de mon input recherche et, de l'icone recherche
+.conteneurInput{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // height: 13vh;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+//le conteneur de la partie recherche
+.rechercche{
+  width: 85vw;
+  height: 46px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid #000000;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+//augmente la taille de l'icone recherche
+.fa-magnifying-glass::before, .fa-search::before {
+  font-size: 25px!important;
+}
+
+//le champ input
+.rechercche input{
+ border: none;
+  outline: none;
+  width: 60vw;
+  height: 43px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: 15px;
+
+}
+
 
 
 
