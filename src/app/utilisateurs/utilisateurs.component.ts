@@ -30,6 +30,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class UtilisateursComponent implements OnInit {
 
   utilisateurs:any;
+  p: number = 1;
+  term:any;
 
   constructor(
     private utilisateurService: UtilisateursService,

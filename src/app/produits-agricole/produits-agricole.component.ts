@@ -11,6 +11,7 @@ import { TokenStorageService } from 'src/services/token-storage.service';
 export class ProduitsAgricoleComponent implements OnInit{
 
   lesProduitAgricoleRecuperer:any;
+  p: number = 1;
 
   ngOnInit(): void {
     this.recupererTousLesProduitsAgricoles();

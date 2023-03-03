@@ -8,7 +8,7 @@
 
     <div class="notifications" style="margin-top: 15px;">
 
-     <div class="notification" *ngFor="let notif of lesNotifications">
+     <div class="notification" *ngFor="let notif of lesNotifications | paginate: { itemsPerPage: 4, currentPage: p}">
        <div class="titre" style="display: flex; justify-content: space-between; ">
         <span>{{notif.titre}}</span>
         <span style="color: #14AE5C;">{{ notif.datenotification | date: 'dd/MM/yyyy HH:mm' }}</span>
@@ -29,6 +29,10 @@
        </div>
       </div>
 
+</div>
+
+<div class="paginationDiv">
+  <pagination-controls (pageChange)="p = $event" previousLabel="Précédent" nextLabel="Suivant"></pagination-controls>
 </div>
   
  </div>

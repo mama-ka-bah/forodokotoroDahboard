@@ -4,7 +4,7 @@
         <div style="font-size: 18px; color: #000; font-weight: bold;">Transporteurs en attente</div>
         <select class="form-select filtreChamp" aria-label="Default select example" [(ngModel)]="etat" (change)="evenement($event)">
             <!-- <option selected></option> -->
-            <option value="tout">TOUT</option>
+            <option value="tout" selected>TOUT</option>
             <option value="encours">ENCOURS</option>
             <option value="rejeter">REJETER</option>
             <!-- <option value="3">Three</option> -->
@@ -12,7 +12,7 @@
     </div>
 
 
-    <div class="col-md-3" *ngFor="let transporteur of transporteurs">
+    <div class="col-md-3" *ngFor="let transporteur of transporteurs | paginate: { itemsPerPage: 4, currentPage: p} ">
         <div class="card " >
             <div class="banner">
                 <img src="{{transporteur.photo}}" class="image1" alt="">
@@ -22,6 +22,7 @@
             </div>
             <h3 class="name" style="font-size: 16px;">{{transporteur.nomcomplet}}</h3>
             <div class="title" style="font-size: 16px;">{{transporteur.username}}</div>
+            <div class="title" style="font-size: 18px;"><a style="color: #14AE5C; text-decoration: underline;" href="{{transporteur.photopermis}}" target="_blank" download>Permis</a></div>
             <div class="actions">
                 <div class="follow-info" *ngIf="action">
                     <h3 (click)="accepterTransporteur(transporteur.username)"><a style="font-size: 20px;"><span><i style="font-size: 18px;" class="fa-solid fa-check"></i></span></a></h3>
@@ -29,6 +30,10 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="paginationDiv">
+        <pagination-controls (pageChange)="p = $event" previousLabel="Précédent" nextLabel="Suivant"></pagination-controls>
     </div>
 
     <div *ngIf="transporteurs == ''" class="vide">Auccune demande</div>

@@ -5,7 +5,7 @@
         <div style="font-size: 18px; color: #000; font-weight: bold;">Agriculteurs en attente</div>
         <select class="form-select filtreChamp" aria-label="Default select example" [(ngModel)]="etat" (change)="evenement($event)">
             <!-- <option selected></option> -->
-            <option value="tout">tout</option>
+            <option value="tout" selected>TOUT</option>
             <option value="encours">ENCOURS</option>
             <option value="rejeter">REJETER</option>
             <!-- <option value="3">Three</option> -->
@@ -13,7 +13,7 @@
     </div>
 
 
-    <div class="col-md-3" *ngFor="let agriculteur of agriculteurs">
+    <div class="col-md-3" *ngFor="let agriculteur of agriculteurs | paginate: { itemsPerPage: 4, currentPage: p} ">
         <div class="card " >
             <div class="banner">
                 <img src="{{agriculteur.photo}}" class="image1" alt="">
@@ -32,8 +32,10 @@
         </div>
     </div>
 
+    <div class="paginationDiv">
+        <pagination-controls (pageChange)="p = $event" previousLabel="Précédent" nextLabel="Suivant"></pagination-controls>
+    </div>
+
     <div *ngIf="agriculteurs == ''" class="vide">Auccune demande</div>
 
-    
-   
 </div>

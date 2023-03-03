@@ -12,7 +12,7 @@
         </select>
     </div>
 
-    <div class="card" *ngFor="let produit of lesProduitAgricoleRecuperer">
+    <div class="card" *ngFor="let produit of lesProduitAgricoleRecuperer | paginate: { itemsPerPage: 4, currentPage: p } ">
         <div class="card-header">
             <img src="{{produit.photo}}" alt="rover" />
         </div>
@@ -32,3 +32,8 @@
 
  
 </div>
+
+
+<div class="paginationDiv">
+    <pagination-controls (pageChange)="p = $event" previousLabel="Précédent" nextLabel="Suivant"></pagination-controls>
+  </div>

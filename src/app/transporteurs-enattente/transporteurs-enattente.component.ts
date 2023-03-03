@@ -13,9 +13,10 @@ export class TransporteursEnattenteComponent implements OnInit{
   etat: any;
   action:boolean = false;
   resultatAction:any;
+  p: number = 1;
 
   constructor(private transporteurService: TransporteurService){
-    
+    this.etat = "Fitre par status";
   }
 
   evenement(event:any){
@@ -34,7 +35,6 @@ export class TransporteursEnattenteComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.etat = "Fitre par status";
     this.recupererLesTransporteurs();
   }
 
@@ -47,6 +47,7 @@ export class TransporteursEnattenteComponent implements OnInit{
   recupererLesTransporteursEncours(){
     this.transporteurService.recuperereLesTransporteurAvecDemandeEncours().subscribe(data =>{
       this.transporteurs = data;
+      console.log(this.transporteurs);
     });
   }
   recupererLesTransporteursRejeter(){

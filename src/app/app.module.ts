@@ -27,6 +27,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { httpInterceptorProviders } from 'src/_helpers/http.interceptor';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 
 
@@ -66,6 +69,8 @@ import { httpInterceptorProviders } from 'src/_helpers/http.interceptor';
     MatSlideToggleModule,
     MatFormFieldModule,
     MatNativeDateModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
     NgMultiSelectDropDownModule.forRoot()
     ],
   providers: [httpInterceptorProviders],

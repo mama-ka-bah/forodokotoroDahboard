@@ -12,6 +12,7 @@ export class NotificationComponent implements OnInit{
 
   currentUser:any;
   lesNotifications:any;
+  p: number = 1;
   //nombreDeNotificationNonLu:any;
 
   constructor(

@@ -98,7 +98,13 @@
     grid-gap: 20px;
     width: 100%;
   }
-  .notification{
+  
+  
+  .paginationDiv{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
   }
 
   @media screen and (max-width:700px){

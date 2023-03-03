@@ -1,6 +1,6 @@
 
 		<div class="wrapper d-flex align-items-stretch" style="overflow: hidden !important;">
-			<nav id="sidebar" style="background-color: #14AE5C;">
+			<nav id="sidebar" style="background-color: #14AE5C;  overflow: hidden !important;">
 				<!-- <h1><a href="index.html" class="logo">MK</a></h1> -->
         <div style="background-color: #efecee;">
           <!-- <img class="logo" src="../assets/images/logo.png" style="height: 90px; width: 60px; display: initial;"> -->
@@ -64,10 +64,10 @@
               >
 
                 <li *ngIf="admin || superadmin"  class="nav-item" [ngClass]="{'active1': activedAgri}" (click)="activationAgri()" routerLink="/forodokotoro/agriculteur-attente" style="padding: 5px; cursor: pointer;  ">
-                    <a style="color: #000;" [ngClass]="{'active1': activedAgri}" class="nav-link">Agriculteurs en enttente</a>
+                    <a style="color: #000;" [ngClass]="{'active1': activedAgri}" class="nav-link">Agriculteurs en attente</a>
                 </li>
                 <li *ngIf="admin || superadmin"  class="nav-item" [ngClass]="{'active1': activedTrans}" (click)="activationTrans()" routerLink="/forodokotoro/transporteurs-attente" style="padding: 5px; cursor: pointer; ">
-                    <a style="color: #000;" [ngClass]="{'active1': activedTrans}" class="nav-link" >Transporteurs en enttente</a>
+                    <a style="color: #000;" [ngClass]="{'active1': activedTrans}" class="nav-link" >Transporteurs en attente</a>
                 </li>
                
                 <li class="nav-item">
@@ -96,7 +96,7 @@
           </div>
         </nav>
 
-        <div class="monscroll">
+        <div  class="monscroll">
 
           <router-outlet></router-outlet>
         </div>

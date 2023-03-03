@@ -57,3 +57,23 @@ html{
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+//style de la pagination debut
+.ngx-pagination {
+  padding-left: 0px !important;
+}
+
+.ngx-pagination .current,
+.btn-info {
+  background: #14AE5C !important;
+  border: transparent !important;
+  border-radius: 20px !important;
+}
+
+.ngx-pagination .current:hover {
+  background: #14AE5C !important;
+  border-radius: 20px !important; 
+  border: transparent !important;
+}
+//fin style pagination

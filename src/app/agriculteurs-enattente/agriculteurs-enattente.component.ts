@@ -10,13 +10,12 @@ import Swal from 'sweetalert2';
 export class AgriculteursEnattenteComponent implements OnInit{
 
   agriculteurs:any;
-  etat: any;
+  etat = "TOUT";
   action:boolean = false;
   resultatAction:any;
+  p: number = 1;
 
-  constructor(private agriculteurService: AgriculteurService){
-    
-  }
+  constructor(private agriculteurService: AgriculteurService){}
 
   evenement(event:any){
       if(event.target.value === "encours"){

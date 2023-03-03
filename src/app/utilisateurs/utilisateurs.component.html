@@ -10,11 +10,11 @@
         <option value="2">Désactive</option>
     </select> -->
     <div class="input-group" style="display: flex!important; justify-content: flex-end!important; margin-bottom: 25px;">
-        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" style="width: 50%;"/>
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" style="width: 50%;" [(ngModel)]="term"/>
         <button type="button" class="btn btn-outline-primary" style="border-color: #14AE5C; color: #14AE5C;">search</button>
       </div>
 <!-- </div> -->
-<div class="table-responsive">
+<div class="table-responsive" style="overflow-y: scroll ;">
 <table class="table">
     <h6 style="color: #14AE5C; font-weight: bold; font-size: 25px;">Les utilisateurs de Forodokotoro</h6>
     <thead>
@@ -25,19 +25,17 @@
         <th  scope="col">Email</th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let utilisateur of utilisateurs">
+    <tbody style="overflow: scroll !important;">
+      <tr *ngFor="let utilisateur of utilisateurs | filter:term | paginate: { itemsPerPage: 4, currentPage: p}">
         <td>{{utilisateur.nomcomplet}}</td>
         <td>{{utilisateur.username}}</td>
         <td>{{utilisateur.adresse}}</td>
         <td>
         {{utilisateur.email}}
-            <!-- <span class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" id="customSwitches">
-                <label class="custom-control-label" for="customSwitches"></label>
-            </span> -->
         </td>
       </tr>
+
+      <pagination-controls (pageChange)="p = $event" previousLabel="Précédent" nextLabel="Suivant"></pagination-controls>
      
   </table>
 </div>
