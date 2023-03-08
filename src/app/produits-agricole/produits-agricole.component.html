@@ -2,15 +2,14 @@
 
     
 
-    <div class="ContFiltreChamp">
+    <!-- <div class="ContFiltreChamp">
         <div style="font-size: 18px; color: #000; font-weight: bold;">Produits agricoles</div>
         <select class="form-select filtreChamp" aria-label="Default select example">
             <option selected>Fitre par état</option>
             <option value="1">Actives</option>
             <option value="2">Désactive</option>
-            <!-- <option value="3">Three</option> -->
         </select>
-    </div>
+    </div> -->
 
     <div class="card" *ngFor="let produit of lesProduitAgricoleRecuperer | paginate: { itemsPerPage: 4, currentPage: p } ">
         <div class="card-header">
@@ -24,9 +23,9 @@
                 {{produit.description.slice(0, 200)}}<span *ngIf="produit.description.length > 200">...</span>
 
             </p>
-            <div class="row">
+            <!-- <div class="row">
                     <button class="myButton">Détail</button>    
-            </div>
+            </div> -->
         </div>
     </div>
 
